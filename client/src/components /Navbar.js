@@ -3,30 +3,30 @@ import { User, LogOut } from 'lucide-react';
 
 function Navbar({ isLoggedIn = false, onSignOut, onSignIn, currentUser }) {
   return (
-    <nav className="navbar bg-light shadow-sm px-3 d-flex justify-content-end align-items-center">
+    <nav className="w-full bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-end">
       {isLoggedIn ? (
-        <div className="d-flex align-items-center gap-2">
-          {/* User Avatar */}
-          <div className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center" style={{ width: 35, height: 35 }}>
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center">
             <User size={18} />
           </div>
-          <span className="fw-semibold">{currentUser}</span>
-
-          {/* Logout Button */}
-          <button className="btn btn-outline-danger btn-sm ms-2" onClick={onSignOut}>
-            <LogOut size={16} className="me-1" />
+          <span className="font-medium text-gray-800">{currentUser}</span>
+          <button
+            className="inline-flex items-center gap-1 text-red-600 border border-red-600 hover:bg-red-50 text-sm px-3 py-1.5 rounded-md"
+            onClick={onSignOut}
+          >
+            <LogOut size={16} />
             Logout
           </button>
         </div>
       ) : (
-        <div className="d-flex align-items-center gap-2">
-          {/* Empty Avatar */}
-          <div className="rounded-circle bg-secondary d-flex justify-content-center align-items-center" style={{ width: 35, height: 35 }}>
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-gray-400 text-white flex items-center justify-center">
             <User size={18} />
           </div>
-
-          {/* Sign In Button */}
-          <button className="btn btn-outline-success btn-sm ms-2" onClick={onSignIn}>
+          <button
+            className="text-green-700 border border-green-700 hover:bg-green-50 text-sm px-3 py-1.5 rounded-md"
+            onClick={onSignIn}
+          >
             Sign In
           </button>
         </div>

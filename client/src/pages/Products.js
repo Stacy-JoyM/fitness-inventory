@@ -112,10 +112,10 @@ const products = [
 
 function Products() {
   return (
-    <div className="product-page ">
-      <div className="row g-4">
+    <div className="p-6 bg-gray-50 min-h-[700px] overflow-y-auto rounded-lg border border-gray-200">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
-          <div className="col-md-4 d-flex justify-content-center" key={product.id}>
+          <div className="flex justify-center" key={product.id}>
             <ProductCard
               image={product.image}
               title={product.title}
